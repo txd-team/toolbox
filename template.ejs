@@ -10,9 +10,10 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="//img.alicdn.com/tfs/TB1HZMhOpXXXXXgXpXXXXXXXXXX-32-32.png">
+  <link href="https://cdn.bootcss.com/antd/3.1.0/antd.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./build/vendor.bundle.css">
-  <link rel="stylesheet" href="./build/<%= htmlWebpackPlugin.options.title %>.bundle.css">
+  <link rel="stylesheet" href="./vendor.bundle.css">
+  <link rel="stylesheet" href="./<%= htmlWebpackPlugin.options.title %>.bundle.css">
   <!--[if lt IE 9]>
   <script>location.href = "//www.taobao.com/markets/tbhome/ali-page-updater"; </script>
   <![endif]-->
@@ -21,7 +22,16 @@
 <body>
 
   <div id="container"></div>
-  <script src="//f.alicdn.com/??react/15.6.1/react-with-addons.min.js,react/15.6.1/react-dom.min.js,redux/3.7.2/redux.min.js,react-redux/5.0.5/react-redux.min.js,redux-thunk/2.2.0/redux-thunk.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/16.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/redux/3.7.2/redux.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-redux/5.0.6/react-redux.min.js"></script>
+  <script src="https://cdn.bootcss.com/redux-thunk/2.2.0/redux-thunk.min.js"></script>
+  <script src="https://cdn.bootcss.com/moment.js/2.20.1/moment.min.js"></script>
+
+  <script src="https://cdn.bootcss.com/antd/3.1.0/antd.min.js"></script>
+
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 
   <script type="text/javascript" src="./vendor.js"></script>
   <script type="text/javascript" src="./<%= htmlWebpackPlugin.options.title %>.js"></script>

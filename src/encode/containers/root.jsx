@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
-
+import Layout from 'components/layout/index';
 class Root extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
@@ -9,9 +9,9 @@ class Root extends Component {
 
   render() {
     return (
-      <div title="笑斌的个人世界">
-        233
-      </div>
+      <Layout>
+        2333
+      </Layout>
     );
   }
 }
