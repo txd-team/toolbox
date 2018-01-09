@@ -8,3 +8,5 @@ mods/.sass-cache/
 .happypack
 .vscode
 build
+
+npm-debug*

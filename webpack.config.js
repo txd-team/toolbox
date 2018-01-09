@@ -95,7 +95,6 @@ module.exports = function (env) {
       'react-dom': 'ReactDOM',
       'react-redux': 'ReactRedux',
       'redux-thunk': 'var window.ReduxThunk.default',
-      '@alife/aisc': 'var Aisc',
       redux: 'Redux',
       antd: 'var antd',
       moment: 'moment',
