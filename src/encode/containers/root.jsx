@@ -9,6 +9,8 @@ const FormItem = Form.Item;
 const { TextArea } = Input;
 const { Option } = Select;
 
+import { Base64 } from 'js-base64';
+
 const encodeList = [
   {
     id: '1',
@@ -22,18 +24,47 @@ const encodeList = [
     command: 'decodeURI',
     checked: true,
   },
+  {
+    id: '3',
+    text: 'Base64加密',
+    command: 'base64encode',
+    checked: true,
+  },
+  {
+    id: '4',
+    text: 'Base64解密',
+    command: 'base64decode',
+    checked: false,
+  },
+  {
+    id: '5',
+    text: 'md5加密',
+    command: 'md5',
+    checked: true,
+  },
+  {
+    id: '6',
+    text: 'sha1加密',
+    command: 'sha1',
+    checked: true,
+  }
 ];
 
 const commandList = {
   'encodeURI': window.encodeURI,
   'decodeURI': window.decodeURI,
+  'base64encode': Base64.encode,
+  'base64decode': Base64.decode,
+  'md5': window.md5,
+  'sha1': window.sha1,
 };
 
 class Root extends Component {
   constructor(props) {
     super(props);
+    const initialExcuteList = encodeList.filter(commandItem => commandItem.checked === true);
     this.state = {
-      excuteList: encodeList,
+      excuteList: initialExcuteList,
       excuteCommandResult: {},
     };
   }
@@ -58,11 +89,15 @@ class Root extends Component {
     this.excuteCommandAndOutputResult(inputValue);
   }
 
-  excuteCommandAndOutputResult = (inputValue) => {
+  excuteCommandAndOutputResult(inputValue) {
     const excuteCommandResult = {};
 
     this.state.excuteList.forEach(command => {
-      excuteCommandResult[command.id] = commandList[command.command](inputValue);
+      try {
+        excuteCommandResult[command.id] = commandList[command.command](inputValue);
+      } catch (e) {
+        console.log(e);
+      }
     });
 
     this.setState({
@@ -91,16 +126,19 @@ class Root extends Component {
               <TextArea
                 placeholder="Please input to encode"
                 autosize={{ minRows: 2, maxRows: 6 }}
-                onPressEnter={this.onValueChange}
               />
               )}
           </FormItem>
         </Form>
 
+        <div className="input-label">
+          执行的命令列表
+        </div>
         <TagList
           onChange={this.changeExcuteCommand}
           datasource={encodeList}
         />
+        <hr />
 
         <div className="input-label">输出</div>
         {
