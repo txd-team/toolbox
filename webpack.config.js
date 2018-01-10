@@ -51,8 +51,8 @@ module.exports = function (env) {
     context: cwd,
     entry,
     output: {
-      path: path.resolve(__dirname, 'build'),
-      publicPath: 'build',
+      path: path.resolve(__dirname, 'docs'),
+      publicPath: 'docs',
       filename: '[name].js',
       chunkFilename: '[chunkhash].js',
     },
