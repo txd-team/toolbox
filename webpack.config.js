@@ -144,12 +144,6 @@ module.exports = function (env) {
     config.plugins.push(
       new UglifyJsPlugin({
         sourceMap: true,
-        minimize: true,
-        compress: {
-          unused: true,
-          warnings: true
-        },
-        // beautify: true // 控制是否压缩
       })
     );
     config.plugins.push(

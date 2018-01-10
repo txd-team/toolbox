@@ -7,6 +7,5 @@ mods/.sass-cache/
 .idea
 .happypack
 .vscode
-build
 
 npm-debug*
