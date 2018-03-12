@@ -6,6 +6,12 @@ const { Header, Content, Footer, Sider } = Layout;
 import './index.scss';
 
 export default class WebLayout extends React.Component {
+  jumpUrl = ({ item }) => {
+    if (item.props.url) {
+      window.location.href = item.props.url;
+    }
+  }
+
   render() {
     return (
       <Layout>
@@ -17,7 +23,7 @@ export default class WebLayout extends React.Component {
             defaultSelectedKeys={['1']}
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="1">编码转换</Menu.Item>
+            <Menu.Item key="1">基础工具</Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
@@ -25,12 +31,16 @@ export default class WebLayout extends React.Component {
             <Sider width={200} style={{ background: '#fff' }}>
               <Menu
                 mode="inline"
-                defaultSelectedKeys={['1']}
+                defaultSelectedKeys={[this.props.current]}
                 defaultOpenKeys={['sub2']}
+                onClick={this.jumpUrl}
                 style={{ height: '100%' }}
               >
-                <Menu.Item key="1">
+                <Menu.Item key="1" url="./encode.html">
                   <span><Icon type="lock" />编码转换</span>
+                </Menu.Item>
+                <Menu.Item key="2" url="./color.html">
+                  <span><Icon type="lock" />颜色转换</span>
                 </Menu.Item>
               </Menu>
             </Sider>

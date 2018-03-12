@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "exceed": "^1.7.2",
-    "js-base64": "^2.4.0"
+    "js-base64": "^2.4.0",
+    "tinycolor2": "^1.4.1"
   }
 }

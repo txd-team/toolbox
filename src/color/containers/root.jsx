@@ -9,60 +9,37 @@ const FormItem = Form.Item;
 const { TextArea } = Input;
 const { Option } = Select;
 
-import { Base64 } from 'js-base64';
-
-const encodeList = [
+const convertList = [
   {
     id: '1',
-    text: 'URL编码',
-    command: 'encodeURI',
+    text: 'HEX颜色',
+    command: 'HEX',
     checked: true,
   },
   {
     id: '2',
-    text: 'URL解码',
-    command: 'decodeURI',
+    text: 'RGB颜色/RGBA颜色',
+    command: 'RGB',
     checked: true,
   },
   {
     id: '3',
-    text: 'Base64加密',
-    command: 'base64encode',
-    checked: true,
-  },
-  {
-    id: '4',
-    text: 'Base64解密',
-    command: 'base64decode',
-    checked: false,
-  },
-  {
-    id: '5',
-    text: 'md5加密',
-    command: 'md5',
-    checked: true,
-  },
-  {
-    id: '6',
-    text: 'sha1加密',
-    command: 'sha1',
+    text: 'RGB百分比颜色/RGBA百分比颜色',
+    command: 'RGBPercent',
     checked: true,
   }
 ];
 
 const commandList = {
-  'encodeURI': window.encodeURI,
-  'decodeURI': window.decodeURI,
-  'base64encode': Base64.encode,
-  'base64decode': Base64.decode,
-  'md5': window.md5,
-  'sha1': window.sha1,
+  HEX: (color) => window.tinycolor(color).toHexString(),
+  RGB: (color) => window.tinycolor(color).toRgbString(),
+  RGBPercent: (color) => window.tinycolor(color).toPercentageRgbString(),
 };
 
 class Root extends Component {
   constructor(props) {
     super(props);
-    const initialExcuteList = encodeList.filter(commandItem => commandItem.checked === true);
+    const initialExcuteList = convertList.filter(commandItem => commandItem.checked === true);
     this.state = {
       excuteList: initialExcuteList,
       excuteCommandResult: {},
@@ -114,18 +91,17 @@ class Root extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Layout current="1">
+      <Layout current="2">
         <div className="input-label">
-          输入 <Button type="danger" size="small" onClick={this.onInputSubmit}>执行命令</Button>
+          输入任何种类的颜色进行转换 <Button type="danger" size="small" onClick={this.onInputSubmit}>开始转换</Button>
         </div>
         <Form>
           <FormItem>
             {getFieldDecorator('inputValue', {
               rules: [{ required: true, message: 'Please input something to excute' }],
             })(
-              <TextArea
-                placeholder="Please input to encode"
-                autosize={{ minRows: 2, maxRows: 6 }}
+              <Input
+                placeholder="Please input anything to convert"
               />
             )}
           </FormItem>
@@ -136,7 +112,7 @@ class Root extends Component {
         </div>
         <TagList
           onChange={this.changeExcuteCommand}
-          datasource={encodeList}
+          datasource={convertList}
         />
         <hr />
 
