@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import Layout from 'components/layout/index';
 import TagList from './TagList';
+import qs from 'qs';
 
 import { Input, Select, Form, Button } from 'antd';
 const FormItem = Form.Item;
@@ -25,14 +26,26 @@ const encodeList = [
     checked: true,
   },
   {
+    id: '7',
+    text: 'query解析',
+    command: 'queryParse',
+    checked: true,
+  },
+  {
+    id: '8',
+    text: 'query序列化',
+    command: 'queryStringify',
+    checked: false,
+  },
+  {
     id: '3',
-    text: 'Base64加密',
+    text: 'Base64编码',
     command: 'base64encode',
     checked: true,
   },
   {
     id: '4',
-    text: 'Base64解密',
+    text: 'Base64解码',
     command: 'base64decode',
     checked: false,
   },
@@ -55,6 +68,15 @@ const commandList = {
   'decodeURI': window.decodeURI,
   'base64encode': Base64.encode,
   'base64decode': Base64.decode,
+  'queryParse': (val) => {
+    return JSON.stringify(qs.parse(val), null, 2);
+  },
+  'queryStringify': (val) => {
+    if (typeof val === 'string') {
+      return val;
+    }
+    return qs.stringify(val);
+  },
   'md5': window.md5,
   'sha1': window.sha1,
 };

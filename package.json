@@ -41,6 +41,7 @@
   "dependencies": {
     "exceed": "^1.7.2",
     "js-base64": "^2.4.0",
+    "qs": "^6.5.1",
     "tinycolor2": "^1.4.1"
   }
 }
