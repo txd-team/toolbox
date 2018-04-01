@@ -1,5 +1,8 @@
 .command-tag-list {
   margin-top: 8px; }
+.regex-string {
+  color: red;
+  text-align: left; }
 #components-layout-demo-top-side .logo {
   width: 120px;
   height: 31px;
@@ -12,3 +15,5 @@
   font-weight: 700;
   margin-top: 12px;
   margin-bottom: 4px; }
+  .input-label a {
+    margin: 0 4px; }
