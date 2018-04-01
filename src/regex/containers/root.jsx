@@ -43,7 +43,7 @@ class Root extends Component {
       <Layout current="3">
         <div className="input-label">
           快捷通道：
-          <Button href="https://regex101.com/" target="_blank" type="danger" size="small">
+          <Button href="https://regexr.com/" target="_blank" type="danger" size="small">
             验证工具
           </Button>
           <Button href="https://github.com/zeeshanu/learn-regex/blob/master/README-cn.md" target="_blank" type="primary" size="small">

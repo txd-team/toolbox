@@ -18,8 +18,12 @@ export default class TagList extends Component {
     if (typeof item.value === 'object') {
       value = item.value.toString();
     }
+    // https://regexr.com/?expression=foo&text=bar
     return (
-      <List.Item actions={[<a target="_blank" href={`https://jex.im/regulex/#!flags=&re=${encodeURIComponent(value)}`}>详情</a>]}>
+      <List.Item actions={[
+        <a target="_blank" href={`https://jex.im/regulex/#!flags=&re=${encodeURIComponent(value)}`}>详情</a>,
+        <a target="_blank" href={`https://regexr.com/?expression=${encodeURIComponent(value)}&text=${encodeURIComponent(item.example || '\n')}`}>测试</a>
+      ]}>
         <List.Item.Meta
           title={item.name}
         />
