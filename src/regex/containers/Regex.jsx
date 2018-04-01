@@ -22,7 +22,7 @@ export default class TagList extends Component {
     return (
       <List.Item actions={[
         <a target="_blank" href={`https://jex.im/regulex/#!flags=&re=${encodeURIComponent(value)}`}>详情</a>,
-        <a target="_blank" href={`https://regexr.com/?expression=${encodeURIComponent(value)}&text=${encodeURIComponent(item.example || '\n')}`}>测试</a>
+        <a target="_blank" href={`https://regexr.com/?expression=${encodeURIComponent(value)}&text=${encodeURIComponent(item.example || '')}`}>测试</a>
       ]}>
         <List.Item.Meta
           title={item.name}
