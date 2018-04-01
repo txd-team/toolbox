@@ -23,13 +23,13 @@ const encodeList = [
     id: '2',
     text: 'URL解码',
     command: 'decodeURI',
-    checked: true,
+    checked: false,
   },
   {
     id: '7',
     text: 'query解析',
     command: 'queryParse',
-    checked: true,
+    checked: false,
   },
   {
     id: '8',
@@ -53,13 +53,13 @@ const encodeList = [
     id: '5',
     text: 'md5加密',
     command: 'md5',
-    checked: true,
+    checked: false,
   },
   {
     id: '6',
     text: 'sha1加密',
     command: 'sha1',
-    checked: true,
+    checked: false,
   }
 ];
 
