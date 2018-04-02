@@ -1,4 +1,11 @@
 .regex-string {
+  padding: 0 12px;
   color: red;
   text-align: left;
+}
+
+.regex-list {
+  .ant-list-item-action {
+    margin-left: 0;
+  }
 }
