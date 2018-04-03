@@ -21,9 +21,13 @@ export default class WebLayout extends React.Component {
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={['1']}
+            selectedKeys={['1']}
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="1">基础工具</Menu.Item>
+            <Menu.Item key="0">
+              <a href="https://prettier.io/playground" target="_blank">代码美化</a> 
+            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
@@ -40,13 +44,13 @@ export default class WebLayout extends React.Component {
                   <span><Icon type="lock" />编码转换</span>
                 </Menu.Item>
                 <Menu.Item key="2" url="./color.html">
-                  <span><Icon type="lock" />颜色转换</span>
+                  <span><Icon type="profile" />颜色转换</span>
                 </Menu.Item>
                 <Menu.Item key="3" url="./regex.html">
-                  <span><Icon type="lock" />正则工具</span>
+                  <span><Icon type="compass" />正则工具</span>
                 </Menu.Item>
                 <Menu.Item key="4" url="./base.html">
-                  <span><Icon type="lock" />进制转换</span>
+                  <span><Icon type="api" />进制转换</span>
                 </Menu.Item>
               </Menu>
             </Sider>
