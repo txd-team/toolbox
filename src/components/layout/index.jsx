@@ -45,6 +45,9 @@ export default class WebLayout extends React.Component {
                 <Menu.Item key="3" url="./regex.html">
                   <span><Icon type="lock" />正则工具</span>
                 </Menu.Item>
+                <Menu.Item key="4" url="./base.html">
+                  <span><Icon type="lock" />进制转换</span>
+                </Menu.Item>
               </Menu>
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
