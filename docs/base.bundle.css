@@ -1,0 +1,14 @@
+.command-tag-list {
+  margin-top: 8px; }
+#components-layout-demo-top-side .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left; }
+
+.input-label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 4px; }
